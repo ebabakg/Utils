@@ -14,13 +14,8 @@ import android.renderscript.ScriptIntrinsicBlur;
 import androidx.annotation.RequiresApi;
 
 public class Blur {
-    private Context context;
-    public Blur(Context context){
-        this.context = context;
-    }
-
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
-    public Drawable blur(int icon , float BITMAP_SCALE, float BLUR_RADIUS) {
+    public Drawable blur(Context context ,int icon , float BITMAP_SCALE, float BLUR_RADIUS) {
         Bitmap image = BitmapFactory.decodeResource(context.getResources(),icon);
 
         int width = Math.round(image.getWidth() * BITMAP_SCALE);
